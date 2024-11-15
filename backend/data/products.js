@@ -1,6 +1,5 @@
 const products = [
   {
-    _id: "1",
     name: "Wireless Headphones",
     image: "/images/airpods.jpg",
     description: "High-quality wireless headphones with noise cancellation.",
@@ -12,7 +11,6 @@ const products = [
     numReviews: 120,
   },
   {
-    _id: "2",
     name: "Smartphone XYZ",
     image: "/images/phone.jpg",
     description: "Latest smartphone with all the new features.",
@@ -24,7 +22,6 @@ const products = [
     numReviews: 300,
   },
   {
-    _id: "3",
     name: "Gaming Mouse",
     image: "/images/camera.jpg",
     description: "Ergonomic gaming mouse with customizable RGB lighting.",
@@ -36,7 +33,6 @@ const products = [
     numReviews: 200,
   },
   {
-    _id: "4",
     name: "4K Ultra HD TV",
     image: "/images/alexa.jpg",
     description: "Experience stunning picture quality with our 4K TV.",
@@ -48,7 +44,6 @@ const products = [
     numReviews: 150,
   },
   {
-    _id: "5",
     name: "Bluetooth Speaker",
     image: "/images/mouse.jpg",
     description: "Portable Bluetooth speaker with high-quality sound.",
