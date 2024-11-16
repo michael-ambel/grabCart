@@ -37,10 +37,16 @@ const upload = multer({
 
 // Route to handle single image upload
 router.post("/", upload.single("image"), (req, res) => {
-  res.send({
-    message: "Image uploaded", // Success message
-    image: `/${req.file.path}`, // File path of the uploaded image
-  });
+  if (req.file) {
+    res.send({
+      message: "Image uploaded", // Success message
+      image: `/${req.file.path}`, // File path of the uploaded image
+    });
+  } else {
+    res.send({
+      message: "No image uploaded",
+    });
+  }
 });
 
 export default router; // Export the router

@@ -10,11 +10,11 @@ export const updateCart = (state) => {
     )
   );
   //shipping price
-  state.shipingPrice = Number(roundDecimal(state.itemsPrice > 0 ? 100 : 0));
+  state.shippingPrice = Number(roundDecimal(state.itemsPrice > 0 ? 100 : 0));
   //tax price
   state.taxPrice = Number(roundDecimal(state.itemsPrice * 0.15));
   //total price
-  state.totalPrice = state.itemsPrice + state.shipingPrice + state.taxPrice;
+  state.totalPrice = state.itemsPrice + state.shippingPrice + state.taxPrice;
 
   localStorage.setItem("cart", JSON.stringify(state));
 };

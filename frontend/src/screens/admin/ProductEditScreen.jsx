@@ -66,12 +66,16 @@ const ProductEditScreen = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
-      const uploadedImageUrl = await uploadFileHandler(
-        fileInputRef.current?.files[0]
-      );
-      setImage(uploadedImageUrl);
-      if (!uploadedImageUrl) {
-        throw Error("Invalid image");
+      let uploadedImageUrl = image; // Default to the current image value
+
+      // Check if a new file is uploaded
+      if (fileInputRef.current?.files[0]) {
+        uploadedImageUrl = await uploadFileHandler(
+          fileInputRef.current?.files[0]
+        );
+        if (!uploadedImageUrl) {
+          throw Error("Invalid image");
+        }
       }
 
       await updateProduct({

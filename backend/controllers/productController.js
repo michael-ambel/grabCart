@@ -86,16 +86,18 @@ export const updateProduct = async (req, res) => {
       req.body;
     const product = await Product.findById(req.params.id);
     if (product) {
+      console.log(product);
       product.name = name;
       product.price = price;
       product.description = description;
       product.image = image;
       product.brand = brand;
       product.category = category;
-      product.coungtInStock = countInStock;
+      product.countInStock = countInStock;
 
-      const updatedProduct = product.save();
-      res.status(200).json(updateProduct);
+      const updatedProduct = await product.save();
+      console.log(product);
+      res.status(200).json(updatedProduct);
     } else res.status(404).json({ error: "No product found" });
   } catch (error) {
     res.status(404).json({ error: "Server error" });
